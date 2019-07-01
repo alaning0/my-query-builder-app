@@ -1,2 +1,7 @@
 <query-builder [(ngModel)]='query' [config]='config'></query-builder>
+
+<div>
+  <button type="submit" class="btn btn-success" (click)='onSubmit()'>Submit</button>
+</div>
+
 <textarea>{{query | json}}</textarea>

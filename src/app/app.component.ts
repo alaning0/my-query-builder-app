@@ -15,7 +15,10 @@ export class AppComponent {
       {field: 'gender', operator: '>=', value: 'm'}
     ]
   };
-  
+
+  onSubmit() {
+    console.log(this.query);
+  }
   config: QueryBuilderConfig = {
     fields: {
       age: {name: 'Age', type: 'number'},
