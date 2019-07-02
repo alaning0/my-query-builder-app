@@ -4,4 +4,8 @@
   <button type="submit" class="btn btn-success" (click)='onSubmit()'>Submit</button>
 </div>
 
-<textarea>{{query | json}}</textarea>
+<textarea id="mystuff">{{query | json}}</textarea>
+
+<div>
+  <button type="submit" class="btn btn-success" (click)='onRestore()'>Restore</button>
+</div>

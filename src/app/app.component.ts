@@ -19,6 +19,14 @@ export class AppComponent {
   onSubmit() {
     console.log(this.query);
   }
+
+  onRestore() {
+    var x = (<HTMLInputElement>document.getElementById("mystuff")).value;
+    this.query = JSON.parse(x);
+    console.log(x);
+    // hmm but after this the form won't update the textbox any longer
+  }
+
   config: QueryBuilderConfig = {
     fields: {
       age: {name: 'Age', type: 'number'},
