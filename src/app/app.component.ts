@@ -11,20 +11,21 @@ export class AppComponent {
   query = {
     condition: 'and',
     rules: [
-      {field: 'age', operator: '<=', value: 'Bob'},
-      {field: 'gender', operator: '>=', value: 'm'}
+      {field: 'age', operator: '<=', value: 12},
+      {field: 'gender', operator: '>=', value: 'm'},
+      {field: 'name', operator: '%', value: 'adam'}
     ]
   };
 
   onSubmit() {
     console.log(this.query);
+    (<HTMLInputElement>document.getElementById("mystuff")).value = JSON.stringify(this.query, null, 2);
   }
 
   onRestore() {
     var x = (<HTMLInputElement>document.getElementById("mystuff")).value;
     this.query = JSON.parse(x);
     console.log(x);
-    // hmm but after this the form won't update the textbox any longer
   }
 
   config: QueryBuilderConfig = {
@@ -37,7 +38,8 @@ export class AppComponent {
           {name: 'Male', value: 'm'},
           {name: 'Female', value: 'f'}
         ]
-      }
+      },
+      name: {name: 'Name', type: 'string'}
     }
   }
 }
